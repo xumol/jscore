@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str=" no zuo no die  ";
+        //删除开头空字符
+        function ltrim(str){
+            return str.replace(/^\s+/,'');
+        }
+        //删除开头和结尾的空字符
+        function rtrim(str){
+            return str.replace(/^\s+|\s+$/g,'');
+        }
+         //删除结尾的空字符
+        function trim(str){
+            return str.replace(/\s+$/,'');
+        }
+        console.log(ltrim(str));
+        console.log(rtrim(str));
+        console.log(trim(str));
+    </script>
+</body>
+</html>

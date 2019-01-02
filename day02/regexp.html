@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数据库：之言 晴天
+        //ajax:[之言 晴天]
+        var kwords=["之言","晴天","明月"];
+        var msg=prompt("请输入消息内容");
+        // var i=msg.search(/之言|晴天/);
+
+        var  reg=new RegExp(kwords.join("|"))
+        // var  i=msg.search(reg);
+        // if(i!=-1){
+            if(reg.test(msg)){
+            document.write("<h1 style='color:red'>包含敏感词！！！不许发送！！</h1>")
+        }else{
+            document.write("小李子说:"+msg);
+        }
+    </script>
+</body>
+</html>

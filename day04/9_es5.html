@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        var eric={
+            eid:1001,ename:"埃里克",salary:8500
+        };
+
+       var miniObj=Object.getOwnPropertyDescriptor(
+           eric,"eid"
+       );
+
+       console.log(miniObj);
+       //eid只读 ename 禁止删除 salary 禁止遍历
+       Object.defineProperties(eric,{
+           eid:{writable:false,configurable:false},
+           ename:{configurable:false},
+           salary:{enumerable:false,configurable:false}
+       });
+       Object.defineProperty(eric,"eid",{
+           writable:true,
+           configurable:true
+       });
+       
+       
+        // eric.eid=1003;
+        // delete eric.ename;
+        for(var key in eric){
+            console.log(`${key}:${eric[key]}`)
+        }
+    </script>
+</body>
+</html>

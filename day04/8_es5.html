@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var eric={
+            eid:1001,ename:"埃里克",age:24
+        };
+        Object.defineProperties(eric,{
+            _age:{enumerable:false,configurable:false},
+            age:{
+                get:function(){
+                    console.log("自动调用age的get");
+                    return this._age;
+                },
+                set:function(value){
+                    console.log('自动调用age的set，value="+value"');
+                    if(value>=18&&value<=65)
+                        this._age=value;
+                        else throw Error("年龄超范围！！")
+                },
+                enumerable:true,configurable:false
+            }
+        })
+        console.log(eric.age);
+        eric.age=24;
+        console.log(eric.age);
+        eric.age=-2
+    </script>
+</body>
+</html>

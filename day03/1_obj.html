@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var lilei={
+            name:"li lei",
+            age:11,
+            intr:function(){
+                console.log(` im ${this.name} , im ${this.age}`);
+            }
+        }
+        console.log(lilei.age);//访问对象的属性
+        lilei.intr();//调用对象的方法
+        lilei.age++;
+        console.log(lilei.age);
+        lilei.intr();
+    </script>
+</body>
+</html>
