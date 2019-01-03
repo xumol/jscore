@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr1 = [2, 4, 6, 4, 2];
+        var arr2 = [1, 2, 3, 4, 5];
+        //判断那个数组全是偶数
+        console.log(
+            arr1.every(function (elem) {
+                return elem % 2 == 0;
+            }),
+            arr2.every(function (elem) {
+                return elem % 2 == 0;
+            })
+        );
+       //判断哪个数组是升序排列
+          console.log(
+              arr1.every(function(elem,i,arr){
+                  return i<arr.length-1?elem<arr[i+1]:true;
+              }),
+              arr2.every(function(elem,i,arr){
+                  return i<arr.length-1?elem<arr[i+1]:true;
+              })
+          )
+    </script>
+</body>
+
+</html>

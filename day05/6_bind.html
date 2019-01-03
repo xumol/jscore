@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function jump() {
+            console.log(`${this.sname}跳一次`);
+        }
+        var lilei = { sname: "li lei" }
+        var hmm = { sname: "ham meimei" }
+        var lilei_jump = jump.bind(lilei);
+        var hmm_jump = jump.bind(hmm);
+        setInterval(lilei_jump, 1000);
+        setInterval(hmm_jump, 1000);
+    </script>
+</body>
+
+</html>

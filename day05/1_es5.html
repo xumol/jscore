@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use stritc"
+        function Emp(eid, ename, salary, age) {
+            Object.defineProperties(this, {
+                eid: {
+                    value: eid,
+                    writable: false,
+                    enumerable: true
+                    
+                },
+                ename: {
+                    value: ename,
+                    writable: true,
+                    enumerable: true
+                  
+                },
+                salary: {
+                    value: salary,
+                    writable: true,
+                    enumerable: false
+                   
+                },
+                _age: {
+                    //    value:age,
+                    writable: true,
+                    enumerable: true
+                   
+                }
+
+            })
+            this.age = age;
+            // Object.preventExtensions(this);
+            Object.seal(this);
+        }
+        // Emp.prototype.age:{
+        Object.defineProperty(Emp.prototype, "age",
+            {
+                get: function () { return this._age; },
+                set: function (value) {
+                    if (value >= 18 && value <= 65)
+                        this._age = value;
+                    else throw Error("年龄超出范围");
+                },
+                enumerable: true,
+                configurable: false
+            });
+        var eric = new Emp(1001, "埃里克", 120000, 22);
+        //    eric.a=1002;
+        //    delete eric.ename;
+        for (var key in eric) {
+            console.log(`${key}:${eric[key]}`);
+        }
+         eric.Age=-5;
+        console.log(eric);
+    </script>
+</body>
+
+</html>
