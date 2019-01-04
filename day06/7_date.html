@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date=[2019,1,4];
+        var[y,m,d]=date;
+        console.log(y,m,d);
+
+       var users={
+           login:function(){
+               console.log("登录....");
+           },
+           logout:function(){
+               console.log("注销....");
+           },
+           islogin:function(){
+               console.log("判断是否登录登录....");
+           }
+       }
+       var {login,logout}=users;
+       login();
+       logout();
+    </script>
+</body>
+</html>

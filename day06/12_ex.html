@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //将Enemy和plane两种类型改为class
+        class Enemy{
+        constructor(fname,speed){
+            this.fname=fname;
+            this.speed=speed;
+        }
+       
+            fly(){
+                console.log(`${this.fname}以时速${this.speed}飞行`);
+            }
+        }
+
+        //让子类型继承父类型：plane extends enemy
+        //不再需要 Object.setPrototypeOf
+         class Plane extends Enemy{
+        constructor(fname,speed,score){
+            //用super（fname,speed）调用付类型结构
+            //不再需要call，不再需要传this
+            super(fname,speed);
+            this.score=score;
+        }
+      
+            getScore(){
+                console.log(`击落${this.fname}的${this.score}分`);
+            }
+        }
+
+       
+        var f16=new Plane("f16",1000,5);
+        console.log(f16);
+        f16.fly();
+        f16.getScore();
+    </script>
+</body>
+</html>

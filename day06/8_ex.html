@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function ajax({
+             url,
+             type,
+             data
+        }) {
+            type = type || "get"
+            document.write(`向服务器端地址${url},发送${type}类型的请求<br>`);
+            if (data)
+                document.write(`携带参数:${data}<br>`);
+            else
+                document.write(`不带参数<br>`);
+        }
+        //url type data
+        ajax({
+            "url": "http://localhost:3000/users/login",
+            "type": "post",
+            "data": "uname=dingding&upwd=123456"
+        });
+        //url
+        ajax({ "url": "http://localhost:3000/users/getUsers" });
+        //url  data
+        ajax({
+            "url": "http://localhost:3000/users/login/getById",
+            "data": "lid=5"
+        });
+
+        //url   type
+        ajax({
+            "url": "http://localhost:3000/users/login",
+            "type": "post"
+        });
+    </script>
+</body>
+
+</html>

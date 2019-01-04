@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function calc(ename,...bonus){
+           document.write(`${ename}的总工资是:${bonus.reduce((prve,elem)=>prve+elem)}<br>`)
+       }
+       calc("li lei",10000,2000);
+       calc("han meimei",4000,5000,1000,2500)
+        
+    </script>
+</body>
+</html>
